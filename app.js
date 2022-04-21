@@ -302,6 +302,21 @@ app.post('/courses/byInst',
   }
 )
 
+app.post('/courses/byKeyword',
+  async (req,res,next) => {
+    const keyword = req.body.keyword;
+    const courses =
+       await Course
+               .find({independent_study:false}).sort({term:1,num:1,section:1})
+    const results = courses.filter((Course) => {
+        return Course.name.toLowerCase().includes(keyword.toLowerCase());
+      })
+    res.locals.courses = results
+    res.locals.times2str = results.strTimes
+    res.render('courselist')
+  }
+)
+
 app.use(isLoggedIn)
 
 app.get('/addCourse/:courseId',
