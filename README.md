@@ -1,6 +1,6 @@
 # COSI103 PA3 
 
-# Demo Video
+## Demo Video
 https://drive.google.com/file/d/12Plr6XVHP2gdRVcZ-FP6vg3hHsv5SdTy/view?usp=sharing
 
 ## Installation
